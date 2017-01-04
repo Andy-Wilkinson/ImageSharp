@@ -62,23 +62,23 @@ namespace ImageSharp.Tests.Colors
             }
         }
 
-        [Theory]
-        [MemberData(nameof(Vector4PackData))]
-        [MemberData(nameof(Vector3PackData))]
-        public void FromVector4ToVector4(IPackedVector packedVector, Vector4 vector4ToPack)
-        {
-            // Arrange
-            var precision = 2;
-            packedVector.PackFromVector4(vector4ToPack);
+        // [Theory]
+        // [MemberData(nameof(Vector4PackData))]
+        // [MemberData(nameof(Vector3PackData))]
+        // public void FromVector4ToVector4(IPackedVector packedVector, Vector4 vector4ToPack)
+        // {
+        //     // Arrange
+        //     var precision = 2;
+        //     packedVector.PackFromVector4(vector4ToPack);
 
-            // Act
-            var vector4 = packedVector.ToVector4();
+        //     // Act
+        //     var vector4 = packedVector.ToVector4();
 
-            // Assert
-            Assert.Equal(vector4ToPack.X, vector4.X, precision);
-            Assert.Equal(vector4ToPack.Y, vector4.Y, precision);
-            Assert.Equal(vector4ToPack.Z, vector4.Z, precision);
-            Assert.Equal(vector4ToPack.W, vector4.W, precision);
-        }
+        //     // Assert
+        //     Assert.Equal(vector4ToPack.X, vector4.X, precision);
+        //     Assert.Equal(vector4ToPack.Y, vector4.Y, precision);
+        //     Assert.Equal(vector4ToPack.Z, vector4.Z, precision);
+        //     Assert.Equal(vector4ToPack.W, vector4.W, precision);
+        // }
     }
 }
