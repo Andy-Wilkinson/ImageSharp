@@ -17,6 +17,7 @@ branches:
   only:
     - master
     - coverity_scan
+    - test-linux-packing
 
 script:
   - dotnet restore
