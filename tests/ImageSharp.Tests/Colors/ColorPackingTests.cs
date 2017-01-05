@@ -28,6 +28,8 @@ namespace ImageSharp.Tests.Colors
 
                 foreach (var vector4 in vector4Values)
                 {
+                    Console.WriteLine($"*** vector4ToPack (Enumerated) = {vector4}");
+
                     yield return new object[] { new Argb(), vector4 };
                     // yield return new object[] { new Bgra4444(), vector4 };
                     // yield return new object[] { new Bgra5551(), vector4 };
@@ -68,6 +70,8 @@ namespace ImageSharp.Tests.Colors
         [MemberData(nameof(Vector3PackData))]
         public void FromVector4ToVector4(IPackedVector packedVector, Vector4 vector4ToPack)
         {
+            Console.WriteLine($"*** vector4ToPack (Before) = {vector4ToPack}");
+
             // Arrange
             var precision = 2;
             packedVector.PackFromVector4(vector4ToPack);
@@ -75,7 +79,7 @@ namespace ImageSharp.Tests.Colors
             // Act
             var vector4 = packedVector.ToVector4();
 
-            Console.WriteLine($"*** vector4ToPack = {vector4ToPack}");
+            Console.WriteLine($"*** vector4ToPack (After) = {vector4ToPack}");
             Console.WriteLine($"*** vector4 = {vector4}");
 
             // Assert
