@@ -12,37 +12,37 @@ namespace ImageSharp.Tests.Colors
 
     public class ColorPackingTests
     {
-        public static IEnumerable<object[]> Vector4PackData
-        {
-            get
-            {
-                var vector4Values = new Vector4[]
-                    {
-                        Vector4.Zero,
-                        Vector4.One,
-                        Vector4.UnitX,
-                        Vector4.UnitY,
-                        Vector4.UnitZ,
-                        Vector4.UnitW,
-                    };
+        // public static IEnumerable<object[]> Vector4PackData
+        // {
+        //     get
+        //     {
+        //         var vector4Values = new Vector4[]
+        //             {
+        //                 Vector4.Zero,
+        //                 Vector4.One,
+        //                 Vector4.UnitX,
+        //                 Vector4.UnitY,
+        //                 Vector4.UnitZ,
+        //                 Vector4.UnitW,
+        //             };
 
-                foreach (var vector4 in vector4Values)
-                {
-                    Console.WriteLine($"*** vector4ToPack (Enumerated) = {vector4}");
+        //         foreach (var vector4 in vector4Values)
+        //         {
+        //             Console.WriteLine($"*** vector4ToPack (Enumerated) = {vector4}");
 
-                    yield return new object[] { new Argb(), vector4 };
-                    // yield return new object[] { new Bgra4444(), vector4 };
-                    // yield return new object[] { new Bgra5551(), vector4 };
-                    // yield return new object[] { new Byte4(), vector4 };
-                    // yield return new object[] { new HalfVector4(), vector4 };
-                    // yield return new object[] { new NormalizedByte4(), vector4 };
-                    // yield return new object[] { new NormalizedShort4(), vector4 };
-                    // yield return new object[] { new Rgba1010102(), vector4 };
-                    // yield return new object[] { new Rgba64(), vector4 };
-                    // yield return new object[] { new Short4(), vector4 };
-                }
-            }
-        }
+        //             yield return new object[] { new Argb(), vector4 };
+        //             // yield return new object[] { new Bgra4444(), vector4 };
+        //             // yield return new object[] { new Bgra5551(), vector4 };
+        //             // yield return new object[] { new Byte4(), vector4 };
+        //             // yield return new object[] { new HalfVector4(), vector4 };
+        //             // yield return new object[] { new NormalizedByte4(), vector4 };
+        //             // yield return new object[] { new NormalizedShort4(), vector4 };
+        //             // yield return new object[] { new Rgba1010102(), vector4 };
+        //             // yield return new object[] { new Rgba64(), vector4 };
+        //             // yield return new object[] { new Short4(), vector4 };
+        //         }
+        //     }
+        // }
 
         public static IEnumerable<object[]> Vector3PackData
         {
@@ -59,6 +59,8 @@ namespace ImageSharp.Tests.Colors
 
                 foreach (var vector4 in vector4Values)
                 {
+                    Console.WriteLine($"*** vector4ToPack (Enumerated) = {vector4}");
+
                     yield return new object[] { new Argb(), vector4 };
                     // yield return new object[] { new Bgr565(), vector4 };
                 }
