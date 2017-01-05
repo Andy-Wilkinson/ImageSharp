@@ -74,6 +74,9 @@ namespace ImageSharp.Tests.Colors
             // Act
             var vector4 = packedVector.ToVector4();
 
+            Console.WriteLine($"*** vector4ToPack = {vector4ToPack}");
+            Console.WriteLine($"*** vector4 = {vector4}");
+
             // Assert
             Assert.Equal(vector4ToPack.X, vector4.X, precision);
             Assert.Equal(vector4ToPack.Y, vector4.Y, precision);
