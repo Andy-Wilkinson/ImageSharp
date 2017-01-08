@@ -48,13 +48,13 @@ namespace ImageSharp.Tests.Colors
         {
             get
             {
-                var vector4Values = new Vector4[]
+                var vector4Values = new float[][]
                     {
-                        Vector4.One,
-                        new Vector4(0, 0, 0, 1),
-                        new Vector4(1, 0, 0, 1),
-                        new Vector4(0, 1, 0, 1),
-                        new Vector4(0, 0, 1, 1),
+                        new float[] {1,1,1,1},
+                        new float[] {0, 0, 0, 1},
+                        new float[] {1, 0, 0, 1},
+                        new float[] {0, 1, 0, 1},
+                        new float[] {0, 0, 1, 1},
                     };
 
                 foreach (var vector4 in vector4Values)
@@ -62,7 +62,7 @@ namespace ImageSharp.Tests.Colors
                     Console.WriteLine($"*** vector4ToPack (Enumerated) = {vector4}");
 
                     yield return new object[] { new Argb(), vector4 };
-                    // yield return new object[] { new Bgr565(), vector4 };
+                    yield return new object[] { new Bgr565(), vector4 };
                 }
             }
         }
@@ -70,8 +70,10 @@ namespace ImageSharp.Tests.Colors
         [Theory]
         // [MemberData(nameof(Vector4PackData))]
         [MemberData(nameof(Vector3PackData))]
-        public void FromVector4ToVector4(IPackedVector packedVector, Vector4 vector4ToPack)
+        public void FromVector4ToVector4(IPackedVector packedVector, float[] data)
         {
+            Vector4 vector4ToPack = new Vector4(data[0], data[1], data[2], data[3]);
+
             Console.WriteLine($"*** vector4ToPack (Before) = {vector4ToPack}");
 
             // Arrange
